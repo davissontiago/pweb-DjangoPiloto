@@ -1,1 +1,4 @@
-venv    
+venv
+home/__pycache__
+pweb/__pycache__
+home/migrations
