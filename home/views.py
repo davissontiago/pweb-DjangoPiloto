@@ -3,7 +3,7 @@ from django.shortcuts import HttpResponse ,render
 # Create your views here.
 
 def index(request):
-    return HttpResponse("Hello, Worls! Dávisson Tiago")
+    return HttpResponse("<h1>Hello, Worlds!<h1> <br> <hr> <h2>Dávisson Tiago<h2>")
 
 def sobre(request):
-    return HttpResponse("Sobre o Sistema!")
+    return HttpResponse("<h1>Sobre o Sistema!<h1>")
