@@ -8,4 +8,5 @@ urlpatterns = [
     path('ajuda/', views.ajuda, name='ajuda'),
     path('item/<int:id>', views.exibir_item, name='exibir_item'),
     path('perfil/<str:usuario>', views.perfil , name='perfil'),
+    path('diasemana/<int:dia>', views.dia_semana, name='dia_semana'),
 ]
