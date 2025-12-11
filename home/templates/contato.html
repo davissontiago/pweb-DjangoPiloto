@@ -2,4 +2,12 @@
 
 {% block title %}Contato{% endblock title %}
 
-{% block content %}<h1>Contato<h1>{% endblock content %}
+{% block content %}
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+
+{% endblock content %}
