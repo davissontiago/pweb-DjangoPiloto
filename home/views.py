@@ -49,6 +49,16 @@ def salvar_produto(request):
     }
     return render(request, 'produto/form.html', contexto)
 
+def detalhes_produto(request, id):
+    return render(request, 'produto/detalhes.html', {'id':id})
+
+def editar_produto(request, id):
+    return render(request, 'produto/form.html', {'id':id})
+
+def excluir_produto(request, id):
+    return render(request, 'produto/excluir.html', {'id':id})
+
+
 def exibir_item(request, id):
     return render(request, 'exibir_item.html', {'id':id})
 
