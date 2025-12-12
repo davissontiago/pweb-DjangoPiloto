@@ -3,5 +3,36 @@
 {% block title %}Detalhes Produto{% endblock title %}
 
 {% block content %} 
-    <h1>Você está visualizando o produto {{id}}</h1>  
+
+    {% if produto %}
+    
+        <div class="card mt-4" style="max-width: 500px;">
+            <div class="card-header bg-info text-white">
+                Detalhes do Produto #{{ produto.id }}
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">{{ produto.nome }}</h3>
+                <p class="card-text">
+                    <strong>Preço:</strong> R$ {{ produto.preco }}
+                </p>
+                <p>
+                    <strong>Estoque:</strong> 10 unidades
+                </p>
+                
+                <hr>
+                
+                <a href="{% url 'produto' %}" class="btn btn-secondary">Voltar</a>
+                <a href="{% url 'editar_produto' produto.id %}" class="btn btn-warning">Editar</a>
+                <a href="{% url 'excluir_produto' produto.id %}" class="btn btn-danger">Excluir</a>
+            </div>
+        </div>
+
+    {% else %}
+        <div class="alert alert-danger mt-4">
+            Produto com ID {{ id }} não encontrado!
+            <br><br>
+            <a href="{% url 'produto' %}" class="btn btn-danger">Voltar para a lista</a>
+        </div>
+    {% endif %}
+
 {% endblock content %}
